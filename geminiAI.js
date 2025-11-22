@@ -25,7 +25,6 @@ async function GenerateDoc(code) {
 
 async function addcomments(code){
     const prompt=`You are a senior software engineer.
-
     Your task:
     - Automatically detect the programming language of the provided code.
     - Add minimal, high-value comments ONLY where needed.
