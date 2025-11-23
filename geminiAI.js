@@ -92,4 +92,17 @@ async function debuggers(code, diagnostics) {
     const result= await geminit(prompt);
     return result;
 }
-module.exports={ GenerateDoc,addcomments,livecode,fixAndOptimize,debuggers };
+async function getexplain(line){
+    const prompt=` Explanation for: \`${line}\`
+                    What it does: 
+                    Describes the purpose of the line.
+                    Complexity:  
+                    Time: O(1), Space: O(1)
+                    Side effects:  
+                    Any state changes this line causes.
+                    Security implications:  
+                    Any unsafe patterns or risks.`;
+    const result=await geminit(prompt);
+    return result;
+}
+module.exports={ GenerateDoc,addcomments,livecode,fixAndOptimize,debuggers,getexplain };
