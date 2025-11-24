@@ -105,4 +105,14 @@ async function getexplain(line){
     const result=await geminit(prompt);
     return result;
 }
-module.exports={ GenerateDoc,addcomments,livecode,fixAndOptimize,debuggers,getexplain };
+
+async function explainCode(regcode,question){
+    const prompt=`You are an expert software engineer.Explain ONLY based on the provided code. Do NOT hallucinate functions that don't exist.
+    Here is the code context from the project:${regcode}
+    User question:${question}`;
+
+    const result=await geminit(prompt);
+
+    return result;
+}
+module.exports={ GenerateDoc,addcomments,livecode,fixAndOptimize,debuggers,getexplain, explainCode };

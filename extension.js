@@ -4,6 +4,7 @@ const {addcoms}=require('./comments_vs');
 const {fixoptimize}=require('./optimization_vs');
 const {debugfix}=require('./debugger_vs');
 const {hoverinfo}=require('./hover_info_vs.js');
+const{codespace}=require('./explain_codespace_vs.js');
 /**
  * @param {vscode.ExtensionContext} context
  */
@@ -24,6 +25,11 @@ function activate(context) {
 	}
 	);
     context.subscriptions.push(hover);
+	let explaincode=vscode.commands.registerCommand("devprod.explaincode",async function(){
+		await codespace();
+	})
+
+	context.subscriptions.push(explaincode);
 
 }
 

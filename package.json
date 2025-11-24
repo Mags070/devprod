@@ -28,6 +28,10 @@
       {
         "command": "devprod.explainerror",
         "group": "navigation"
+      },
+      {
+        "command": "devprod.explaincode",
+        "group":"navigation"
       }
     ]
   },
@@ -52,6 +56,10 @@
       {
         "command": "devprod.livecode",
         "title":"AI live code suggestion"
+      },
+      {
+        "command": "devprod.explaincode",
+        "title": "AI codespace explainer"
       }
     ]
   },
